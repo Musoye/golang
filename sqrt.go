@@ -1,11 +1,10 @@
 package main
 
-import ("fmt"; "math"; "errors"; "log")
+import ("fmt"; "math"; "log")
 
 func Sq(num float64) (float64, error) {
 	if num < 0 {
-		err :=  errors.New("The number is less than zero")
-		log.Fatal(err)
+		return 0, fmt.Errorf("The number cannot be less than 0")
 	}
 
 	return math.Sqrt(num), nil
